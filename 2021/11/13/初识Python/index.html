@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Python初印象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识Python">
+<meta property="og:url" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/index.html">
+<meta property="og:site_name" content="桦的博客">
+<meta property="og:description" content="Python初印象">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E5%90%89%E5%B0%94%C2%B7%E8%8C%83%E7%BD%97%E8%8B%8F%E5%A7%86.jpg">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87.jpg">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E6%9C%AC%E8%B4%BE%E5%B0%BC%C2%B7%E6%96%AF%E7%89%B9%E5%8A%B3%E6%96%AF%E7%89%B9%E5%8D%A2%E6%99%AE.jpg">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E5%AE%89%E5%BE%B7%E6%96%AF%C2%B7%E6%B5%B7%E5%B0%94%E6%96%AF%E4%BC%AF%E6%A0%BC.jpg">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%AB%98%E6%96%AF%E6%9E%97.jpg">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E6%8B%89%E6%96%AF%E9%A9%AC%E6%96%AF%C2%B7%E5%8B%92%E5%BE%B7%E5%B0%94%E5%A4%AB.jpg">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6.png">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6.png">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6.png">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6.png">
+<meta property="og:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6.png">
+<meta property="article:published_time" content="2021-11-13T12:48:39.000Z">
+<meta property="article:modified_time" content="2021-11-13T14:49:01.209Z">
+<meta property="article:author" content="Hua">
+<meta property="article:tag" content="分享">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/%E5%90%89%E5%B0%94%C2%B7%E8%8C%83%E7%BD%97%E8%8B%8F%E5%A7%86.jpg">
+
+
+<link rel="canonical" href="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/","path":"2021/11/13/初识Python/","title":"初识Python"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>初识Python | 桦的博客</title>
+  
+
+
+
+<link rel="dns-prefetch" href="https://blog-comment-system-6i6ya8m5t-yosoka.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">桦的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%88%9D%E5%8D%B0%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">Python初印象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87"><span class="nav-number">1.1.</span> <span class="nav-text">开发效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E6%9B%B2%E7%BA%BF"><span class="nav-number">1.2.</span> <span class="nav-text">学习曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%BD%A3%E6%80%81%E5%9C%88"><span class="nav-number">1.3.</span> <span class="nav-text">⽣态圈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E2%BE%8F%E9%80%9F%E5%BA%A6"><span class="nav-number">1.4.</span> <span class="nav-text">运⾏速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%B3%E5%85%B3%E9%87%8D%E8%A6%81%E7%9A%84%E4%B8%80%E7%82%B9%EF%BC%81"><span class="nav-number">1.5.</span> <span class="nav-text">- 至关重要的一点！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E4%B8%BB%E8%A6%81%E5%BA%94%E2%BD%A4%E9%A2%86%E5%9F%9F"><span class="nav-number">2.</span> <span class="nav-text">Python主要应⽤领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E4%B8%8B%E6%88%91%E7%9A%84%E7%AC%AC%E2%BC%80%E2%BE%8F%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">写下我的第⼀⾏代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%BD%A4%E4%BA%A4%E4%BA%92%E5%99%A8%E6%89%A7%E2%BE%8F%E4%BB%A3%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">⽤交互器执⾏代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%86%99%E5%9C%A8%E2%BD%82%E4%BB%B6%E2%BE%A5%E4%BF%9D%E5%AD%98%E6%89%A7%E2%BE%8F"><span class="nav-number">3.2.</span> <span class="nav-text">代码写在⽂件⾥保存执⾏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99"><span class="nav-number">4.1.</span> <span class="nav-text">变量的定义规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="nav-number">4.2.</span> <span class="nav-text">变量的修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">基本的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="nav-number">5.1.</span> <span class="nav-text">什么是数据类型？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">5.2.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E2%BD%A4%E6%88%B7%E8%BE%93%E2%BC%8A"><span class="nav-number">5.3.</span> <span class="nav-text">读取⽤户输⼊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0"><span class="nav-number">5.4.</span> <span class="nav-text">格式化打印*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E4%B9%8Bif%E2%80%A6else%E2%80%A6"><span class="nav-number">5.5.</span> <span class="nav-text">流程控制之if…else…</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hua"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Hua</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/13/%E5%88%9D%E8%AF%86Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hua">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桦的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          初识Python
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-13 20:48:39 / 修改时间：22:49:01" itemprop="dateCreated datePublished" datetime="2021-11-13T20:48:39+08:00">2021-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">分享</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2021/11/13/%E5%88%9D%E8%AF%86Python/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2021/11/13/%E5%88%9D%E8%AF%86Python/" data-xid="/2021/11/13/%E5%88%9D%E8%AF%86Python/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2021/11/13/%E5%88%9D%E8%AF%86Python/" class="post-meta-item leancloud_visitors" data-flag-title="初识Python" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Python初印象"><a href="#Python初印象" class="headerlink" title="Python初印象"></a><strong>Python初印象</strong></h2><span id="more"></span>
+<ul>
+<li><h3 id="开发效率"><a href="#开发效率" class="headerlink" title="开发效率"></a>开发效率</h3></li>
+</ul>
+<p>由于语法简洁明了，⼜有丰富的、现成的各种模块库，开发什么功能都不⽤重新造轮⼦，直接在前辈的写好的代码基础上扩展即可，⼤⼤提⾼开发效率。</p>
+<ul>
+<li><h3 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h3></li>
+</ul>
+<p>Python算是最适合⼩⽩上⼿的语⾔了。 很多⼈觉得计算机难学，是因为⼀开始就没选对语⾔，你⼀上来就搞C\C++\Java啥的，那指针呀、链表呀、⾯向对象呀就够你喝⼀壶的。 ⽽学Python符合⼈性的学习曲线，由简⼊繁，先易后难。</p>
+<ul>
+<li><h3 id="⽣态圈"><a href="#⽣态圈" class="headerlink" title="⽣态圈"></a>⽣态圈</h3></li>
+</ul>
+<p>Python⾃1989年诞⽣⾄今30余年，在IT技术的各个领域⽅向都发展出强⼤的⽣态圈，在⼈⼯智能、数据分析、爬⾍开发、游戏开发、⾃动化运维\测试、web开发、后端开发、科学运算、GUI编程等⽅⾯均全⾯开花，被称为编程界的瑞⼠军⼑、万能语⾔。</p>
+<ul>
+<li><h3 id="运⾏速度"><a href="#运⾏速度" class="headerlink" title="运⾏速度"></a>运⾏速度</h3></li>
+</ul>
+<p>Python 的运⾏速度相⽐C语⾔确实慢很多，跟JAVA相⽐也要慢⼀些，因此这也是很多所谓的⼤⽜不屑于使⽤Python的主要原因，但其实这⾥所指的运⾏速度慢在⼤多数情况下⽤户是⽆法直接感知到的，必须借助测试⼯具才能体现出来，⽐如你⽤C运⼀个程序花了0.01s,⽤Python是0.1s,这样C语<br>⾔直接⽐Python快了10倍,算是⾮常夸张了，但是你是⽆法直接通过⾁眼感知的，因为⼀个正常⼈所能感知的时间最⼩单位是0.15-0.4s左右，哈哈。其实在⼤多数情况下Python已经完全可以满⾜你对程序速度的要求，除⾮你要写对速度要求极⾼的搜索引擎、⽹络游戏等，这种情况下，当然还是建议你⽤C去实现的。</p>
+<h3 id="至关重要的一点！"><a href="#至关重要的一点！" class="headerlink" title="- 至关重要的一点！"></a>- 至关重要的一点！</h3><p>我们来看看各大语言创始人：</p>
+<p><strong>Python</strong></p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E5%90%89%E5%B0%94%C2%B7%E8%8C%83%E7%BD%97%E8%8B%8F%E5%A7%86.jpg" alt="吉尔·范罗苏姆"></p>
+<p><strong>C语言</strong></p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87.jpg" alt="丹尼斯·里奇"></p>
+<p><strong>C++语言</strong><br><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E6%9C%AC%E8%B4%BE%E5%B0%BC%C2%B7%E6%96%AF%E7%89%B9%E5%8A%B3%E6%96%AF%E7%89%B9%E5%8D%A2%E6%99%AE.jpg" alt="本贾尼·斯特劳斯特卢普"></p>
+<p><strong>C#语言</strong></p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E5%AE%89%E5%BE%B7%E6%96%AF%C2%B7%E6%B5%B7%E5%B0%94%E6%96%AF%E4%BC%AF%E6%A0%BC.jpg" alt="安德斯·海尔斯伯格"></p>
+<p><strong>Java语言</strong></p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%AB%98%E6%96%AF%E6%9E%97.jpg" alt="詹姆斯·高斯林"></p>
+<p><strong>PHP</strong></p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E6%8B%89%E6%96%AF%E9%A9%AC%E6%96%AF%C2%B7%E5%8B%92%E5%BE%B7%E5%B0%94%E5%A4%AB.jpg" alt="拉斯马斯·勒德尔夫"></p>
+<p>此时无声胜有声……</p>
+<h2 id="Python主要应⽤领域"><a href="#Python主要应⽤领域" class="headerlink" title="Python主要应⽤领域"></a><strong>Python主要应⽤领域</strong></h2><ul>
+<li><ol>
+<li><strong>WEB开发</strong>——最⽕的Python web框架Django, ⽀持异步⾼并发的Tornado框架，短⼩精悍的flask,bottle, Django官⽅的标语把Django定义为the framework for perfectionist with deadlines(⼤意是⼀个为完全主义者开发的⾼效率web框架)</li>
+</ol>
+</li>
+<li><ol start="2">
+<li><strong>⽹络编程</strong>——⽀持⾼并发的Twisted⽹络框架， py3引⼊的asyncio使异步编程变的⾮常简单</li>
+</ol>
+</li>
+<li><ol start="3">
+<li><strong>爬⾍——爬⾍领域</strong>——Python⼏乎是霸主地位，Scrapy\Request\BeautifuSoap\urllib等，想爬啥就<br>爬啥</li>
+</ol>
+</li>
+<li><ol start="4">
+<li><strong>云计算</strong>——⽬前最⽕最知名的云计算框架就是OpenStack,Python现在的⽕，很⼤⼀部分就是因为<br>云计算</li>
+</ol>
+</li>
+<li><ol start="5">
+<li><strong>⼈⼯智能、数据分析</strong>—— Python 是⽬前公认的⼈⼯智能和数据分析领域的必备语⾔</li>
+</ol>
+</li>
+<li><ol start="6">
+<li><strong>⾃动化运维</strong>——问问你认识的每个运维⼈员，运维⼈员必须会的语⾔是什么？10个⼈相信会给你⼀个相同的答案，它的名字叫Python。知名的运维⼯具Ansible\Saltstack都是Python写的</li>
+</ol>
+</li>
+<li><ol start="7">
+<li><strong>⾦融分析</strong>——10年的时候，写的好多分析程序、⾼频交易软件就是⽤的Python,到⽬前,Python是⾦融分析、量化交易领域⾥⽤的最多的语⾔</li>
+</ol>
+</li>
+<li><ol start="8">
+<li><strong>科学运算</strong>—— 97年开始，NASA就在⼤量使⽤Python在进⾏各种复杂的科学运算，随着NumPy,SciPy, Matplotlib, Enthought librarys等众多程序库的开发，使的Python越来越适合于做科学计算、绘制⾼质量的2D和3D图像。和科学计算领域最流⾏的商业软件Matlab相⽐，Python是⼀⻔<br>通⽤的程序设计语⾔，⽐Matlab所采⽤的脚本语⾔的应⽤范围更⼴泛</li>
+</ol>
+</li>
+<li><ol start="9">
+<li><strong>游戏开发</strong>——在⽹络游戏开发中Python也有很多应⽤。⽐如知名的游戏&lt;⽂明&gt;、⽹易公司的《⼤话⻄游》 就是⽤Python写的</li>
+</ol>
+</li>
+</ul>
+<h2 id="写下我的第⼀⾏代码"><a href="#写下我的第⼀⾏代码" class="headerlink" title="写下我的第⼀⾏代码"></a><strong>写下我的第⼀⾏代码</strong></h2><p>执⾏Python代码可以通过2种⽅式， ⼀种是在Python交互器⾥直接写， ⼀种是写到⽂件⾥保存执⾏。</p>
+<h3 id="⽤交互器执⾏代码"><a href="#⽤交互器执⾏代码" class="headerlink" title="⽤交互器执⾏代码"></a>⽤交互器执⾏代码</h3><p>windows —&gt; 运⾏ —&gt; 输⼊cmd ，然后回⻋，弹出cmd序，输⼊python, 就进⼊了交互器模式向屏幕输出⼀⾏⽂字的语法是 print(“拓号是你要打印的字，⽤引号包起来”)。</p>
+<h3 id="代码写在⽂件⾥保存执⾏"><a href="#代码写在⽂件⾥保存执⾏" class="headerlink" title="代码写在⽂件⾥保存执⾏"></a>代码写在⽂件⾥保存执⾏</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a><strong>变量</strong></h2><p>怎么存呢，直接设置⼀个 <code>变量名=值</code> ,就可以了，后续调用的时候，直接调用变量名就可以了</p>
+<blockquote>
+<p>ps：程序是从上到下依次逐⾏执⾏的，所以变量必须先定义，后调⽤， 否则会报错</p>
+</blockquote>
+<h3 id="变量的定义规则"><a href="#变量的定义规则" class="headerlink" title="变量的定义规则"></a>变量的定义规则</h3><ul>
+<li><ol>
+<li>在程序全局都会⽤到的变量，尽量定义在⽂件开头</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>变量名只能是 字⺟、数字或下划线的任意组合，其它形式均不合法</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>变量名的第⼀个字符不能是数字</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>以下关键字不要声明为变量名 <code>[‘and’, ‘as’, ‘assert’, ‘break’, ‘class’, ‘continue’, ‘def’, ‘del’, ‘elif’, ‘else’, ‘except’, ‘exec’, ‘finally’, ‘for’, ‘from’, ‘global’, ‘if’, ‘import’, ‘in’, ‘is’, ‘lambda’, ‘not’, ‘or’, ‘pass’, ‘print’, ‘raise’, ‘return’, ‘try’, ‘while’, ‘with’, ‘yield’]</code> ，这些是Python语法中已经占⽤了的关键字</li>
+</ol>
+</li>
+</ul>
+<h3 id="变量的修改"><a href="#变量的修改" class="headerlink" title="变量的修改"></a>变量的修改</h3><ul>
+<li>直接赋值修改</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量名=需要修改的数值</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除变量</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> 变量名 <span class="comment">#删除变量</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="基本的数据类型"><a href="#基本的数据类型" class="headerlink" title="基本的数据类型"></a>基本的数据类型</h2><h3 id="什么是数据类型？"><a href="#什么是数据类型？" class="headerlink" title="什么是数据类型？"></a>什么是数据类型？</h3><p>我们⼈类可以很容易的分清数字与字符的区别，但是计算机并不能呀，计算机虽然很强⼤，但从某种⻆度上看⼜很傻，除⾮你明确的告诉它，1是数字，“汉”是⽂字，否则它是分不清1和‘汉’的区别的，因此，在每个编程语⾔⾥都会有⼀个叫数据类型的东东，其实就是对常⽤的各种数据类型进⾏了明确的划分，你想让计算机进⾏数值运算，你就传数字给它，你想让他处理⽂字，就传字符串类型给他。Python中常⽤的数据类型包括多种，今天我们暂只讲4种， 数字、字符串、布尔类型、列表。</p>
+<p>一个很直观的例子，同样是一堆的0101011，你怎么知道它表达的是数字的意思还是字符的意思，亦或是其他的意思，这就需要数据类型来帮助识别了。</p>
+<blockquote>
+<p>ps：可⽤ <code>type()</code> ⽅法来查看数据类型</p>
+</blockquote>
+<ul>
+<li>数字类型</li>
+</ul>
+<p><strong><code>int（整型） integer</code></strong></p>
+<p>与c语言不同的是，Python的所用整数都是这种类型的，不用再区分长短整形，着实方便了不少。</p>
+<ul>
+<li><p><strong><code>float (浮点型)</code></strong></p>
+</li>
+<li><p><strong><code>字符串</code></strong></p>
+</li>
+</ul>
+<p>在Python中,加了引号的字符都被认为是字符串！</p>
+<p>那单引号、双引号、多引号有什么区别呢？ 让我⼤声告诉你，单双引号⽊有任何区别，只有下⾯这种情<br>况 你需要考虑单双的配合</p>
+<p>例如：单引号只能对应单引号，如果单引号开头双引号结尾是不行的。</p>
+<p><strong>多引号</strong></p>
+<p>多引号什么作⽤呢？作⽤就是多⾏字符串必须⽤多引号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msg = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">床前明月光，</span></span><br><span class="line"><span class="string">疑是地上霜。</span></span><br><span class="line"><span class="string">举头望明月，</span></span><br><span class="line"><span class="string">低头思故乡。</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(msg)</span><br></pre></td></tr></table></figure>
+
+<p><strong>字符串拼接</strong></p>
+<p>数字可以进⾏加减乘除等运算，字符串呢？让我⼤声告述你，也能？what ?是的，但只能进⾏”相加”和”相乘”运算。</p>
+<p><strong>注意</strong>，字符串的拼接只能是双⽅都是字符串，不能跟数字或其它类型拼接</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">name=<span class="string">&#x27;yosoka&#x27;</span></span><br><span class="line">age=<span class="string">&#x27;18&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;name+age&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment">#相加其实就是简单拼接</span></span><br><span class="line">&gt;&gt;&gt;yosoka18</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;name*<span class="number">10</span>&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment">#相乘其实就是复制⾃⼰多少次，再拼接在⼀起</span></span><br><span class="line">&gt;&gt;&gt;<span class="number">18181818181818181818</span></span><br><span class="line"><span class="comment">#不用尝试相减、相除</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>布尔类型</strong></li>
+</ul>
+<p>布尔类型很简单，就两个值 ，⼀个True(真)，⼀个False(假), 主要⽤作逻辑判断</p>
+<ul>
+<li><strong>列表(List)</strong></li>
+</ul>
+<p>其实就像C里面的数组</p>
+<p><strong>元素添加</strong></p>
+<p>元素的添加有2种⽅式，插⼊、追加，插⼊指可以可以把⼀个新元素插⼊到列表的任意位置</p>
+<p><strong>插⼊</strong></p>
+<p><code>names.insert(3,&quot;⼩明&quot;) #3代表你想插⼊的下标位置</code></p>
+<p><strong>追加</strong></p>
+<p>添加到列表的尾部</p>
+<p><code>names.append(&quot;⼩强&quot;)</code></p>
+<p><strong>列表的修改</strong></p>
+<p>直接根据下标找到元素重新赋值即可</p>
+<p><code>names[0] = &quot;yosoka&quot;</code></p>
+<p><strong>删除元素</strong></p>
+<p>有2种删除⽅法，⼀个是下标删除，⼀个是元素值删除</p>
+<p><code>names.remove(&quot;⼩明&quot;)</code> # 通过指定元素名删除， 会删除从左开始找到的第⼀个⼩明， 如果有多个⼩明，则只删除找到的第⼀个。</p>
+<p><code>del names[3]</code> # 通过指定下标删除</p>
+<p><strong>判断某元素是否在列表里</strong></p>
+<p><code>&quot;Mack&quot; in names</code></p>
+<p><code>&gt;&gt;&gt;true</code></p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a><strong>运算符</strong></h3><p>计算机可以进⾏的运算有很多种，可不只加减乘除这么简单，运算按种类可分为算数运算、⽐较运算、逻辑运算、赋值运算、成员运算、身份运算、位运算，今天我们暂只学习算数运算、⽐较运算、逻辑运算、赋值运算、成员运算</p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="算数运算符"></p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="⽐较运算符"></p>
+<p>注意:&lt;&gt;在python3⾥已经取消了，仅在py2⾥有效</p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="赋值运算符"></p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="逻辑运算符"></p>
+<p>注意：括号⾥的⼦公式会先计算出来结果，再跟其它的值对⽐。 因为括号的优先级更⾼，多个or 或and 拼在⼀起，or的优先级更⾼</p>
+<p><img src="/2021/11/13/%E5%88%9D%E8%AF%86Python/%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="成员运算符"></p>
+<p>注意，可以⽤来测试字符串、列表、元组、字典、集合，但是不能测试数字类型</p>
+<h3 id="读取⽤户输⼊"><a href="#读取⽤户输⼊" class="headerlink" title="读取⽤户输⼊"></a><strong>读取⽤户输⼊</strong></h3><p>若你的程序要接收⽤户指令，可以⽤input语法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&quot;What is your name?&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello &quot;</span> + name )</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>: input()⽅法接收的只是字符串，即使你输⼊的是数字，它也会按字符串处理</p>
+<h3 id="格式化打印"><a href="#格式化打印" class="headerlink" title="格式化打印*"></a><em>格式化打印</em>*</h3><p>现有⼀练习题需求，问⽤户的姓名、年龄、⼯作、爱好 ，然后打印成以下格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">------------ info of yosoka -----------</span><br><span class="line">Name : yosoka</span><br><span class="line">Age : 18</span><br><span class="line">job : Student</span><br><span class="line">Hobbie: girl</span><br><span class="line">------------- end -----------------</span><br></pre></td></tr></table></figure>
+
+<p>你怎么实现呢？你会发现，⽤字符拼接的⽅式很难实现这种格式的输出，所以⼀起来学⼀下新姿势<br>你只需要简单的在字符串⾥引⽤你外部的变量就可以啦</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&quot;Name:&quot;</span>)</span><br><span class="line">age = <span class="built_in">input</span>(<span class="string">&quot;Age:&quot;</span>)</span><br><span class="line">job = <span class="built_in">input</span>(<span class="string">&quot;Job:&quot;</span>)</span><br><span class="line">hobbie = <span class="built_in">input</span>(<span class="string">&quot;Hobbie:&quot;</span>)</span><br><span class="line">info = <span class="string">f&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">------------ info of <span class="subst">&#123;name&#125;</span> -----------</span></span><br><span class="line"><span class="string">Name : <span class="subst">&#123;name&#125;</span></span></span><br><span class="line"><span class="string">Age : <span class="subst">&#123;age&#125;</span></span></span><br><span class="line"><span class="string">job : <span class="subst">&#123;job&#125;</span></span></span><br><span class="line"><span class="string">Hobbie: <span class="subst">&#123;hobbie&#125;</span></span></span><br><span class="line"><span class="string">------------- end -----------------</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(info)</span><br></pre></td></tr></table></figure>
+
+<h3 id="流程控制之if…else…"><a href="#流程控制之if…else…" class="headerlink" title="流程控制之if…else…"></a><strong>流程控制之if…else…</strong></h3><p>假如把写程序⽐做⾛路，那我们到现在为⽌，⼀直⾛的都是直路，还没遇到过分叉⼝，想象现实中，你遇到了分叉⼝，然后你决定往哪拐必然是有所动机的。你要判断那条岔路是你真正要⾛的路，如果我们想让程序也能处理这样的判断怎么办？ 很简单，只需要在程序⾥预设⼀些条件判断语句，满⾜哪个条件，就⾛哪条岔路。这个过程就叫流程控制。</p>
+<p>基本上在各个语⾔中，都是⽤语法if…else…来实现，可分为单分⽀、双分⽀、多分⽀</p>
+<p><strong>单分⽀</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    满⾜条件执⾏代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span>条件不成⽴就⾛这段代码</span><br></pre></td></tr></table></figure>
+
+<p><strong>缩进</strong></p>
+<blockquote>
+<p>这⾥必须要插⼊这个缩进的知识点</p>
+</blockquote>
+<p>你会发现，上⾯的if代码⾥，每个条件的下⼀⾏都缩进了4个空格，这是为什么呢？这就是Python的⼀<br>⼤特⾊，强制缩进，⽬的是为了让程序知道，每段代码依赖哪个条件，如果不通过缩进来区分，程序怎么会知道，当你的条件成⽴后，去执⾏哪些代码呢？</p>
+<p>在其它的语⾔⾥，⼤多通过 {} 来确定代码块，⽐如C,C++,Java,Javascript都是这样，看⼀个JavaScript代码的例子</p>
+<p>在有 <code>&#123;&#125;</code> 来区分代码块的情况下，缩进的作⽤就只剩下让代码变的整洁了。</p>
+<p>Python是⻔超级简洁的语⾔，发明者定是觉得⽤ <code>&#123;&#125;</code> 太丑了，所以索性直接不⽤它，那怎么能区分代码块呢？答案就是强制缩进。</p>
+<p>Python的缩进有以下⼏个原则:</p>
+<ul>
+<li><p>顶级代码必须顶⾏写，即如果⼀⾏代码本身不依赖于任何条件，那它必须不能进⾏任何缩进</p>
+</li>
+<li><p>同⼀级别的代码，缩进必须⼀致</p>
+</li>
+<li><p>官⽅建议缩进⽤4个空格，当然你也可以⽤2个，如果你想被⼈笑话的话</p>
+</li>
+</ul>
+<p><strong>多分⽀</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    满⾜条件执⾏代码</span><br><span class="line"><span class="keyword">elif</span> 条件: <span class="comment"># else if ...</span></span><br><span class="line">    满⾜条件执⾏代码,前提是上⼀层的<span class="keyword">if</span>条件不满⾜</span><br><span class="line"><span class="keyword">elif</span> 条件:</span><br><span class="line">    满⾜条件执⾏代码，前提是上⼀层的<span class="keyword">elif</span>条件不满⾜</span><br><span class="line"><span class="keyword">elif</span> 条件:</span><br><span class="line">    满⾜条件执⾏代码,前提是上⼀层的<span class="keyword">elif</span>条件不满⾜</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    上⾯所有的条件不满⾜就⾛这段</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>ありがとうございます。</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Hua 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Hua 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"># 分享</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/31/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8B%EF%BC%89/" rel="prev" title="C语言总结（下）">
+                  <i class="fa fa-chevron-left"></i> C语言总结（下）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/13/%E5%88%9D%E8%AF%86Mysql/" rel="next" title="初识Mysql">
+                  初识Mysql <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hua</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">19k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">17 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://blog-comment-system-6i6ya8m5t-yosoka.vercel.app/","placeholder":"(发表评论)","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/11/13/%E5%88%9D%E8%AF%86Python/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>

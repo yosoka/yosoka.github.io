@@ -36,8 +36,8 @@
 <meta property="article:published_time" content="2021-10-23T10:48:32.000Z">
 <meta property="article:modified_time" content="2021-10-23T14:44:54.771Z">
 <meta property="article:author" content="Hua">
-<meta property="article:tag" content="分享">
 <meta property="article:tag" content="总结">
+<meta property="article:tag" content="分享">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2021/10/23/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.jpg">
 
@@ -141,13 +141,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -290,12 +290,12 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a</span><br></pre></td></tr></table></figure>
 
 <p>变量赋值的过程中可以先定义后赋值，也可以边定义边赋值</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a><strong>数据类型</strong></h2><p><img src="%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.jpg"></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a><strong>数据类型</strong></h2><p><img src="/2021/10/23/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.jpg"></p>
 <p>最常用的就是基本类型</p>
 <ul>
 <li>整形：int，用于存储整数</li>
 </ul>
-<p><img src="%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B1%BB%E5%9E%8B.jpg"></p>
+<p><img src="/2021/10/23/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B1%BB%E5%9E%8B.jpg"></p>
 <ul>
 <li><p>字符型：char，用于存储字符</p>
 </li>
@@ -358,7 +358,7 @@
 <p><strong><code>+=、-=、*=、/=、%=</code></strong></p>
 <p>这些演变过来的赋值运算符，其实就是在赋值过程中的省略，因为赋值的过程是右边赋值到左边，所以前面符号的操作就是左边的变量值与右边的变量值进行运算再通过等于赋值到左边</p>
 <h3 id="3-关系运算符"><a href="#3-关系运算符" class="headerlink" title="3.关系运算符"></a>3.关系运算符</h3><p>关系运算符最大的作用就是进行判断</p>
-<p><img src="%E7%AC%A6%E5%8F%B7.jpg"></p>
+<p><img src="/2021/10/23/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/%E7%AC%A6%E5%8F%B7.jpg"></p>
 <p>在判断过程中需要注意的时候，那些在判断的过程中省略的操作就是用1，0进行判断真假</p>
 <h3 id="4-逻辑运算符"><a href="#4-逻辑运算符" class="headerlink" title="4.逻辑运算符"></a>4.逻辑运算符</h3><p>逻辑就是与，或，非</p>
 <ul>
@@ -400,12 +400,12 @@
 <p>利用嵌套的特性，我们可以实现C语言中输出图形，上三角、倒三角等等</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//3行4列的矩形</span></span><br><span class="line">    <span class="comment">//外循环控制行数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">    <span class="comment">//内循环控制列数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="3%E8%A1%8C4%E5%88%97%E7%9A%84%E7%9F%A9%E5%BD%A2.png"></p>
+<p><img src="/2021/10/23/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/3%E8%A1%8C4%E5%88%97%E7%9A%84%E7%9F%A9%E5%BD%A2.png"></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">最多打印5行</span></span><br><span class="line"><span class="comment">最多打印5列</span></span><br><span class="line"><span class="comment">由于:列数&lt;=行数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="%E4%B8%89%E8%A7%92%E5%BD%A2.png"></p>
+<p><img src="/2021/10/23/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/%E4%B8%89%E8%A7%92%E5%BD%A2.png"></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; <span class="number">5</span>; j++)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E5%80%92%E4%B8%89%E8%A7%92.png"></p>
+<p><img src="/2021/10/23/C%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%8A%EF%BC%89/%E5%80%92%E4%B8%89%E8%A7%92.png"></p>
 <p>另外一个经典的案例就是冒泡排序</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> abc=<span class="number">5</span>;<span class="comment">//数组的元素个数 </span></span><br><span class="line">	<span class="keyword">int</span> a[abc],b,c,d;</span><br><span class="line">    <span class="keyword">for</span>(c=<span class="number">0</span>;c&lt;abc;c++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入第%d个变量：&quot;</span>,c+<span class="number">1</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[c]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(b=<span class="number">0</span>;b&lt;abc<span class="number">-1</span>;b++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(c=<span class="number">0</span>;c&lt;abc-b<span class="number">-1</span>;c++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[c]&gt;a[c+<span class="number">1</span>])<span class="comment">//&quot;&lt;&quot;为从大到小   &quot;&gt;&quot;为从小到大 </span></span><br><span class="line">			&#123;</span><br><span class="line">				d=a[c+<span class="number">1</span>];</span><br><span class="line">				a[c+<span class="number">1</span>]=a[c];</span><br><span class="line">				a[c]=d;</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(b=<span class="number">0</span>;b&lt;abc;b++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;第%d：%d\n&quot;</span>,b+<span class="number">1</span>,a[b]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="小语句"><a href="#小语句" class="headerlink" title="小语句"></a><strong>小语句</strong></h2><ul>
@@ -451,8 +451,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"># 分享</a>
               <a href="/tags/%E6%80%BB%E7%BB%93/" rel="tag"># 总结</a>
+              <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"># 分享</a>
           </div>
 
         
@@ -499,13 +499,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">14k</span>
+    <span title="站点总字数">19k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
